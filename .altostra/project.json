@@ -42,6 +42,13 @@
 						"to": "Data01",
 						"type": "connection.resource-access"
 					}
+				},
+				"ApiEndpoint05": {
+					"Options01": {
+						"type": "connection.trigger",
+						"from": "ApiEndpoint05",
+						"to": "Options01"
+					}
 				}
 			},
 			"id": "ckgou18gt0001xet26xdoad35",
@@ -49,8 +56,8 @@
 				"designer": {
 					"resourcePositions": {
 						"Api01": {
-							"x": 41,
-							"y": 229,
+							"x": 44,
+							"y": 228,
 							"z": 0
 						},
 						"Data01": {
@@ -61,6 +68,11 @@
 						"HandleResources01": {
 							"x": 357,
 							"y": 300,
+							"z": 0
+						},
+						"Options01": {
+							"x": -182,
+							"y": 260,
 							"z": 0
 						}
 					}
@@ -88,6 +100,10 @@
 						{
 							"id": "ApiEndpoint04",
 							"type": "ref"
+						},
+						{
+							"type": "ref",
+							"id": "ApiEndpoint05"
 						}
 					],
 					"id": "Api01",
@@ -170,6 +186,26 @@
 					"runtime": "nodejs12.x",
 					"timeout": 6,
 					"type": "resource.compute.function"
+				},
+				"ApiEndpoint05": {
+					"type": "resource.api.endpoint",
+					"name": "api-endpoint-4",
+					"method": "OPTIONS",
+					"path": "/handle-options",
+					"api": {
+						"type": "ref",
+						"id": "Api01"
+					},
+					"id": "ApiEndpoint05"
+				},
+				"Options01": {
+					"type": "resource.compute.function",
+					"name": "options",
+					"entryPoint": "functions/options.handler",
+					"memory": 512,
+					"runtime": "nodejs12.x",
+					"timeout": 6,
+					"id": "Options01"
 				}
 			},
 			"unsafe": false,

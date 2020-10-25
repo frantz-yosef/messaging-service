@@ -16,7 +16,7 @@ jobs:
       - name: Set node version
         uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
+          node-version: '12.x'
       - name: Install dependencies
         run: npm install
       - name: Install Altostra CLI
