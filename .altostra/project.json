@@ -1,5 +1,5 @@
 {
-	"id": "ckgou18gt0001xet26xdoad351",
+	"id": "MessagingService-iv00a0i",
 	"name": "Messaging Service",
 	"description": "A simple CRUD service template",
 	"created": "2020-10-25T08:10:34.607Z",
@@ -211,5 +211,6 @@
 			"unsafe": false,
 			"version": "2019-10-24"
 		}
-	]
+	],
+	"type": "altostra"
 }
