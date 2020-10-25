@@ -15,8 +15,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Install dependencies
-        run: npm install
       - name: Install Altostra CLI
         run: |
              npm install @altostra/cli
@@ -24,5 +22,7 @@ jobs:
              node node_modules/@altostra/cli/bin/alto.js api-key set ${{ secrets.ALTO_API_KEY }}
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
       - name: Push to repository
         run: node node_modules/@altostra/cli/bin/alto.js push v$(node -p -e "require('./package.json').version")
