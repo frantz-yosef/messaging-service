@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
       - name: Set node version
         uses: actions/setup-node@v1
         with:
@@ -24,5 +22,7 @@ jobs:
              npm install @altostra/cli
              node node_modules/@altostra/cli/bin/alto.js --version
              node node_modules/@altostra/cli/bin/alto.js api-key set ${{ secrets.ALTO_API_KEY }}
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Push to repository
         run: node node_modules/@altostra/cli/bin/alto.js push v$(node -p -e "require('./package.json').version")
