@@ -25,4 +25,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Push to repository
-        run: node node_modules/@altostra/cli/bin/alto.js push v$(node -p -e "require('./package.json').version")
+        run: alto push v$(node -p -e "require('./package.json').version")
