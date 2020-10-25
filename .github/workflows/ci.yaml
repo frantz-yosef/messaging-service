@@ -3,7 +3,7 @@ name: Node.js CI
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   build:
@@ -17,12 +17,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '13.x'
-      - name: Install dependencies 
+      - name: Install dependencies
         run: npm install
       - name: Install Altostra CLI
         run: |
              npm install @altostra/cli
              node node_modules/@altostra/cli/bin/alto.js --version
              node node_modules/@altostra/cli/bin/alto.js api-key set ${{ secrets.ALTO_API_KEY }}
-      - name: Push to repository       
+      - name: Push to repository
         run: node node_modules/@altostra/cli/bin/alto.js push v$(node -p -e "require('./package.json').version")
