@@ -1,0 +1,21 @@
+{
+	"id": "ckgp7zsjl0000fvqshha5hdff",
+	"name": "messaging-service",
+	"description": "An empty project template",
+	"created": "2020-10-25T14:41:20.962Z",
+	"blueprints": [
+		{
+			"version": "2019-10-24",
+			"connections": {},
+			"resources": {},
+			"metadata": {
+				"designer": {
+					"resourcePositions": {}
+				}
+			},
+			"id": "ckgp7zsjl0000fvqshha5hdff",
+			"name": "messaging-service",
+			"unsafe": false
+		}
+	]
+}
