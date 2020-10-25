@@ -17,9 +17,9 @@ jobs:
           node-version: '12.x'
       - name: Install Altostra CLI
         run: |
-             npm install @altostra/cli
-             node node_modules/@altostra/cli/bin/alto.js --version
-             node node_modules/@altostra/cli/bin/alto.js api-key set ${{ secrets.ALTO_API_KEY }}
+             npm install -g @altostra/cli
+             alto --version
+             alto api-key set ${{ secrets.ALTO_API_KEY }}
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
