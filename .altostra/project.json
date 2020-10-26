@@ -50,7 +50,16 @@
 						"to": "Options01"
 					}
 				},
-				"ApiEndpoint06": {}
+				"ApiEndpoint06": {},
+				"ApiEndpoint07": {},
+				"ApiEndpoint08": {},
+				"ApiEndpoint09": {
+					"Hello05": {
+						"type": "connection.trigger",
+						"from": "ApiEndpoint09",
+						"to": "Hello05"
+					}
+				}
 			},
 			"id": "ckgou18gt0001xet26xdoad35",
 			"metadata": {
@@ -62,18 +71,23 @@
 							"z": 0
 						},
 						"Data01": {
-							"x": 645,
-							"y": 299,
+							"x": 576,
+							"y": 300,
 							"z": 0
 						},
 						"HandleResources01": {
-							"x": 357,
-							"y": 300,
+							"x": 328,
+							"y": 302,
 							"z": 0
 						},
 						"Options01": {
 							"x": -191,
 							"y": 256,
+							"z": 0
+						},
+						"Hello05": {
+							"x": 307,
+							"y": 129,
 							"z": 0
 						}
 					}
@@ -108,7 +122,7 @@
 						},
 						{
 							"type": "ref",
-							"id": "ApiEndpoint06"
+							"id": "ApiEndpoint09"
 						}
 					],
 					"id": "Api01",
@@ -212,7 +226,16 @@
 					"timeout": 6,
 					"id": "Options01"
 				},
-				"ApiEndpoint06": {
+				"Hello05": {
+					"type": "resource.compute.function",
+					"name": "hello",
+					"entryPoint": "functions/hello.handler",
+					"memory": 512,
+					"runtime": "nodejs12.x",
+					"timeout": 6,
+					"id": "Hello05"
+				},
+				"ApiEndpoint09": {
 					"type": "resource.api.endpoint",
 					"name": "api-endpoint-5",
 					"method": "GET",
@@ -221,7 +244,7 @@
 						"type": "ref",
 						"id": "Api01"
 					},
-					"id": "ApiEndpoint06"
+					"id": "ApiEndpoint09"
 				}
 			},
 			"unsafe": false,
