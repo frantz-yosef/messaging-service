@@ -27,4 +27,4 @@ jobs:
       - name: Push to repository
         run: alto push v$(node -p -e "require('./package.json').version") --json
       - name: Deploy to Prod
-        run: alto deploy dev:v$(node -p -e "require('./package.json').version") --env Dev --json
+        run: alto deploy prod:v$(node -p -e "require('./package.json').version") --env Prod --json
