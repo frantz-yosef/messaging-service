@@ -25,6 +25,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Push to repository
-        run: alto push v$(node -p -e "require('./package.json').version")
+        run: alto push v$(node -p -e "require('./package.json').version") --json
       - name: Deploy to Prod
-        run: alto deploy dev:v$(node -p -e "require('./package.json').version") --new Playground
+        run: alto deploy dev:v$(node -p -e "require('./package.json').version") --env Dev --json
