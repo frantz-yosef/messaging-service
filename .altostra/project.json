@@ -50,13 +50,7 @@
 						"to": "Options01"
 					}
 				},
-				"ApiEndpoint06": {
-					"Hello01": {
-						"type": "connection.trigger",
-						"from": "ApiEndpoint06",
-						"to": "Hello01"
-					}
-				}
+				"ApiEndpoint06": {}
 			},
 			"id": "ckgou18gt0001xet26xdoad35",
 			"metadata": {
@@ -78,13 +72,8 @@
 							"z": 0
 						},
 						"Options01": {
-							"x": -182,
-							"y": 260,
-							"z": 0
-						},
-						"Hello01": {
-							"x": 308,
-							"y": 154,
+							"x": -191,
+							"y": 256,
 							"z": 0
 						}
 					}
@@ -222,16 +211,6 @@
 					"runtime": "nodejs12.x",
 					"timeout": 6,
 					"id": "Options01"
-				},
-				"Hello01": {
-					"type": "resource.compute.function",
-					"name": "hello",
-					"entryPoint": "functions/hello.handler",
-					"memory": 512,
-					"runtime": "nodejs12.x",
-					"timeout": 6,
-					"id": "Hello01",
-					"layers": []
 				},
 				"ApiEndpoint06": {
 					"type": "resource.api.endpoint",
