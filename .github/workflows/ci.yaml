@@ -1,9 +1,9 @@
 name: Node.js CI
 
 on:
-  push:
+  pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   build:
@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Branch Name
+        run: echo ${{ github.head_ref }}
       - name: Set node version
         uses: actions/setup-node@v1
         with:
@@ -26,5 +28,5 @@ jobs:
         run: npm install
       - name: Push to repository
         run: alto push v$(node -p -e "require('./package.json').version") --json
-      - name: Deploy to Prod
-        run: alto deploy prod:v$(node -p -e "require('./package.json').version") --env Prod --json
+      - name: Deploy to Dev
+        run: alto deploy $():v$(node -p -e "require('./package.json').version") --env Dev --json
