@@ -29,4 +29,4 @@ jobs:
       - name: Push to repository
         run: alto push v$(node -p -e "require('./package.json').version") --json
       - name: Deploy to Dev
-        run: alto deploy $():v$(node -p -e "require('./package.json').version") --env Dev --json
+        run: alto deploy ${{ github.head_ref }}:v$(node -p -e "require('./package.json').version") --env Dev --json
