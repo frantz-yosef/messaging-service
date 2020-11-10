@@ -1,5 +1,5 @@
 {
-	"id": "MessagingService-iv00a0i",
+	"id": "MessagingService-d3001fr",
 	"name": "Messaging Service",
 	"description": "A simple CRUD service template",
 	"created": "2020-10-25T08:10:34.607Z",
@@ -53,7 +53,14 @@
 				"ApiEndpoint06": {},
 				"ApiEndpoint07": {},
 				"ApiEndpoint08": {},
-				"ApiEndpoint09": {}
+				"ApiEndpoint09": {},
+				"TestTopic01": {
+					"HandleResources01": {
+						"type": "connection.trigger",
+						"from": "TestTopic01",
+						"to": "HandleResources01"
+					}
+				}
 			},
 			"id": "ckgou18gt0001xet26xdoad35",
 			"metadata": {
@@ -66,17 +73,22 @@
 						},
 						"Data01": {
 							"x": 576,
-							"y": 300,
+							"y": 302,
 							"z": 0
 						},
 						"HandleResources01": {
-							"x": 328,
-							"y": 302,
+							"x": 329,
+							"y": 286,
 							"z": 0
 						},
 						"Options01": {
 							"x": -191,
 							"y": 256,
+							"z": 0
+						},
+						"TestTopic01": {
+							"x": 325,
+							"y": 173,
 							"z": 0
 						}
 					}
@@ -210,6 +222,13 @@
 					"runtime": "nodejs12.x",
 					"timeout": 6,
 					"id": "Options01"
+				},
+				"TestTopic01": {
+					"type": "resource.notification-topic",
+					"name": "testTopic",
+					"displayName": "testTopic",
+					"topicName": "testTopic",
+					"id": "TestTopic01"
 				}
 			},
 			"unsafe": false,
